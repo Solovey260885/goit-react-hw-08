@@ -7,7 +7,7 @@ export default function Navigation() {
       <NavLink className={css.link} to="/">
         Home
       </NavLink>
-      <NavLink className={css.link} to="/tasks">
+      <NavLink className={css.link} to="/contacts">
         Contacts
       </NavLink>
     </nav>

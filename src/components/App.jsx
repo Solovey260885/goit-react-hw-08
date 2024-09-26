@@ -7,7 +7,7 @@ const HomePage = lazy(() => import("../pages/HomePage/HomePage"));
 //   import("../pages/RegistrationPage/RegistrationPage")
 // );
 // const LoginPage = lazy(() => import("../pages/LoginPage/LoginPage"));
-// const TasksPage = lazy(() => import("../pages/ContactsPage/ContactsPage"));
+const ContactsPage = lazy(() => import("../pages/ContactsPage/ContactsPage"));
 
 export default function App() {
   return (
@@ -17,7 +17,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           {/* <Route path="/register" element={<RegisterPage />} /> */}
           {/* <Route path="/login" element={<LoginPage />} /> */}
-          {/* <Route path="/tasks" element={<TasksPage />} /> */}
+          <Route path="/contacts" element={<ContactsPage />} />
         </Routes>
       </Suspense>
     </Layout>
