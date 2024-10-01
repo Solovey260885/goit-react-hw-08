@@ -4,4 +4,6 @@
   align-items: center;
   margin-bottom: 16px;
   border-bottom: 1px solid #2a363b;
+  background: linear-gradient(to bottom, #a3c1f8, #f1faf9);
+  padding: 8px;
 }

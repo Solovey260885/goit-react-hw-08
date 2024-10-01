@@ -1,9 +1,41 @@
-.form {
-  width: 320px;
-}
-
 .label {
   display: flex;
   flex-direction: column;
   margin-bottom: 16px;
+  font-weight: bold;
+  font-size: 24px;
+  margin-left: 0;
+}
+.btn {
+  cursor: pointer;
+  border: 1px solid #4d4d4d;
+  border-radius: 2px;
+  background-color: #4327c0;
+  color: #f7f7fa;
+  width: 64px;
+  font-size: 16px;
+  padding: 8px;
+}
+
+.form {
+  box-sizing: border-box;
+  width: 400px;
+
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+
+  border: 2px solid rgb(64, 65, 64);
+  border-radius: 4px;
+
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.input {
+  width: 95%;
+  height: 24px;
+  font-size: 16px;
+  padding: 16px;
+  margin-top: 8px;
 }

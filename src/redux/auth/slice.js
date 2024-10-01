@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, isAnyOf } from "@reduxjs/toolkit";
 
 import { logIn, logOut, refreshUser, register } from "../auth/operations";
 
@@ -38,7 +38,17 @@ const authSlice = createSlice({
         state.user = action.payload;
         state.isRefreshing = false;
         state.isLoggedIn = true;
-      });
+      })
+      .addMatcher(isAnyOf(register.pending, logIn.pending), (state) => {
+        state.isLoading = true;
+      })
+      .addMatcher(
+        isAnyOf(register.rejected, logIn.rejected),
+        (state, action) => {
+          state.isLoading = false;
+          state.isError = action.payload;
+        }
+      );
   },
 });
 

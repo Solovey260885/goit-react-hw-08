@@ -12,9 +12,10 @@ export default function SearchBox() {
 
   return (
     <div className={css.wrapper}>
-      <p className={css.text}>Find contacts by name!</p>
+      <p className={css.text}>Find contacts by name or number!</p>
       <input
         type="text"
+        placeholder="Anna"
         onChange={(event) => {
           hundleFilter(event.target.value);
         }}

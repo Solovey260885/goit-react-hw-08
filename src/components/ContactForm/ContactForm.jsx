@@ -49,7 +49,12 @@ export default function ContactForm() {
         <label htmlFor={nameFieldId} className={css.inputLable}>
           Name
         </label>
-        <Field type="text" name="name" className={css.input} />
+        <Field
+          type="text"
+          name="name"
+          className={css.input}
+          placeholder="Anna"
+        />
         <ErrorMessage
           name="name"
           component="div"
@@ -59,7 +64,12 @@ export default function ContactForm() {
         <label htmlFor={numberFieldId} className={css.inputLable}>
           Number
         </label>
-        <Field type="text" name="number" className={css.input} />
+        <Field
+          type="text"
+          name="number"
+          className={css.input}
+          placeholder="0123456789"
+        />
         <ErrorMessage
           name="number"
           component="div"

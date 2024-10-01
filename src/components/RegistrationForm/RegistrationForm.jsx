@@ -23,17 +23,34 @@ export default function RegistrationForm() {
       <Form className={css.form} autoComplete="off">
         <label className={css.label}>
           Username
-          <Field type="text" name="name" />
+          <Field
+            type="text"
+            name="name"
+            placeholder="Anna"
+            className={css.input}
+          />
         </label>
         <label className={css.label}>
           Email
-          <Field type="email" name="email" />
+          <Field
+            type="email"
+            name="email"
+            placeholder="abcdef@ghi.jkl"
+            className={css.input}
+          />
         </label>
         <label className={css.label}>
           Password
-          <Field type="password" name="password" />
+          <Field
+            type="password"
+            name="password"
+            placeholder="*** min 8 symbol ***"
+            className={css.input}
+          />
         </label>
-        <button type="submit">Register</button>
+        <button type="submit" className={css.btn}>
+          Register
+        </button>
       </Form>
     </Formik>
   );
