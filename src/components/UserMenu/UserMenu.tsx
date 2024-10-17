@@ -3,9 +3,10 @@ import css from "./UserMenu.module.css";
 import { selectUser } from "../../redux/auth/selectors";
 import { logOut } from "../../redux/auth/operations";
 import React from "react";
+import { useAppDispatch } from "../Contact/Contact";
 
 const UserMenu: React.FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const user = useSelector(selectUser);
   return (
     <div className={css.wrapper}>

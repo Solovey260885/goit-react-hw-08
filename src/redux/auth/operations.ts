@@ -52,23 +52,24 @@ export const logIn = createAsyncThunk<
   }
 });
 
-export const logOut = createAsyncThunk<void, void, { rejectValue: string }>(
-  "auth/logout",
-  async (_, thunkAPI) => {
-    try {
-      await axios.post("users/logOut");
-      clearAuthHeader();
-    } catch (error) {
-      if (axios.isAxiosError(error) && error.response) {
-        return thunkAPI.rejectWithValue(
-          error.response.data.message || "Failed to fetch user"
-        );
-      } else {
-        return thunkAPI.rejectWithValue("An unknown error occurred");
-      }
+export const logOut = createAsyncThunk<
+  void,
+  void,
+  { state: RootState; rejectValue: string }
+>("auth/logout", async (_, thunkAPI) => {
+  try {
+    await axios.post("users/logOut");
+    clearAuthHeader();
+  } catch (error) {
+    if (axios.isAxiosError(error) && error.response) {
+      return thunkAPI.rejectWithValue(
+        error.response.data.message || "Failed to fetch user"
+      );
+    } else {
+      return thunkAPI.rejectWithValue("An unknown error occurred");
     }
   }
-);
+});
 
 export const refreshUser = createAsyncThunk<
   AuthUser,
